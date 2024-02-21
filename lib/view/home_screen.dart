@@ -72,7 +72,8 @@ class _HomeScreenState extends State<HomeScreen> {
             isLastQuestion
                 ? InkWell(
                     onTap: () {
-                      Navigator.pushReplacement(
+                      Navigator.push(
+                          //////////////////////////////////
                           context,
                           MaterialPageRoute(
                             builder: (context) => ResultScreen(
@@ -91,23 +92,6 @@ class _HomeScreenState extends State<HomeScreen> {
                       )),
                     ),
                   )
-                // ElevatedButton(
-                //     style: ButtonStyle(
-                //         shape: MaterialStatePropertyAll(RoundedRectangleBorder(
-                //             borderRadius: BorderRadius.circular(20))),
-                //         backgroundColor:
-                //             MaterialStatePropertyAll(Colors.white10)),
-                //     onPressed: () {
-                //       Navigator.pushReplacement(
-                //           context,
-                //           MaterialPageRoute(
-                //             builder: (context) => ResultScreen(),
-                //           ));
-                //     },
-                //     child: Text(
-                //       "Finish",
-                //       style: TextStyle(color: Colors.white),
-                //     ))
                 : InkWell(
                     onTap:
                         selectedAnswerIndex != null ? goToNextQuestion : null,
@@ -122,21 +106,6 @@ class _HomeScreenState extends State<HomeScreen> {
                       )),
                     ),
                   )
-            // ElevatedButton(
-            //     style: ButtonStyle(
-            //         shape: MaterialStatePropertyAll<RoundedRectangleBorder>(
-            //           RoundedRectangleBorder(
-            //               borderRadius: BorderRadius.circular(.5),
-            //               side: BorderSide(color: Colors.white10)),
-            //         ),
-            //         backgroundColor:
-            //             MaterialStatePropertyAll(Colors.white10)),
-            //     onPressed:
-            //         selectedAnswerIndex != null ? goToNextQuestion : null,
-            //     child: Text(
-            //       "Next",
-            //       style: TextStyle(color: Colors.white),
-            //     ))
           ],
         ),
       ),

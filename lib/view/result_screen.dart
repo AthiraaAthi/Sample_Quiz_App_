@@ -25,8 +25,9 @@ class ResultScreen extends StatelessWidget {
                 height: 250,
                 width: 250,
                 child: CircularProgressIndicator(
+                  //////FOR THE RESULT
                   strokeWidth: 10,
-                  value: score / 9,
+                  value: score / 4,
                   color: Colors.green,
                   backgroundColor: Colors.white,
                 ),
