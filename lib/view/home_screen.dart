@@ -36,10 +36,14 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     final QuestionModel = questions[questionIndex];
+
+    ///Questions is a list of questions////
     bool isLastQuestion = questionIndex == questions.length - 1;
     return Scaffold(
       appBar: AppBar(
-        title: Text("Flutter Quiz"),
+        title: Text(
+          "Flutter Quiz",
+        ),
       ),
       body: Padding(
         padding: const EdgeInsets.all(24.0),
@@ -72,7 +76,7 @@ class _HomeScreenState extends State<HomeScreen> {
             isLastQuestion
                 ? InkWell(
                     onTap: () {
-                      Navigator.push(
+                      Navigator.pushReplacement(
                           //////////////////////////////////
                           context,
                           MaterialPageRoute(

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:sample_quiz_app/view/questionss.dart';
 
+import 'home_screen.dart';
+
 class ResultScreen extends StatelessWidget {
   const ResultScreen({super.key, required this.score});
   final int score;
@@ -11,6 +13,24 @@ class ResultScreen extends StatelessWidget {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              Text(
+                "Back to home",
+                style: TextStyle(fontSize: 15),
+              ),
+              IconButton(
+                  onPressed: () {
+                    Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => HomeScreen(),
+                        ));
+                  },
+                  icon: Icon(Icons.exit_to_app)),
+            ],
+          ),
           SizedBox(
             width: 1000,
           ),
@@ -27,7 +47,7 @@ class ResultScreen extends StatelessWidget {
                 child: CircularProgressIndicator(
                   //////FOR THE RESULT
                   strokeWidth: 10,
-                  value: score / 4,
+                  value: score / 10,
                   color: Colors.green,
                   backgroundColor: Colors.white,
                 ),
